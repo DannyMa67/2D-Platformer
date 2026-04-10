@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://bse1o38e6e4vg"]
+
+[ext_resource type="Script" uid="uid://dpkh0fi0hxval" path="res://scripts/menu.gd" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://choxajwhqqkvv" path="res://Sprites/Backgrounds/backgroundForest.png" id="2_con2f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mhnvy"]
+line_spacing = 5.0
+font_size = 120
+font_color = Color(0.5639664, 0.37229878, 0.46198595, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.34117648)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -599.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vjb58")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -97.0
+offset_right = 1154.0
+offset_bottom = 1053.0
+texture = ExtResource("2_con2f")
+expand_mode = 4
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.042000003
+anchor_top = 0.1
+anchor_right = 0.042000003
+anchor_bottom = 0.1
+offset_left = 319.774
+offset_top = 69.2
+offset_right = 1789.774
+offset_bottom = 909.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+text = "2D Platformer Game
+"
+label_settings = SubResource("LabelSettings_mhnvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 357.0
+offset_right = 1143.9998
+offset_bottom = 1126.9995
+scale = Vector2(0.2, 0.1)
+theme_override_font_sizes/font_size = 100
+button_mask = 3
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 485.00003
+offset_top = 475.00003
+offset_right = 1150.0
+offset_bottom = 1225.0
+scale = Vector2(0.2, 0.1)
+theme_override_font_sizes/font_size = 100
+text = "Quit
+"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

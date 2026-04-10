@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cow0c3mmn2qdc"]
+[gd_scene load_steps=5 format=3 uid="uid://cow0c3mmn2qdc"]
 
 [ext_resource type="Script" uid="uid://dx5jhtno1nx62" path="res://scripts/end_flag.gd" id="1_8s2b2"]
 [ext_resource type="Texture2D" uid="uid://clywp24w8a5oi" path="res://Sprites/Objects/tile_0112.png" id="2_jk1va"]
+[ext_resource type="PackedScene" uid="uid://cd57n3xn4x4vu" path="res://scenes/level_2.tscn" id="2_l8w0g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pa8r4"]
 radius = 8.0
 
 [node name="EndFlag" type="Area2D"]
 script = ExtResource("1_8s2b2")
+scene_to_load = ExtResource("2_l8w0g")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(19, -9)
